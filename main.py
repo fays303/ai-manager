@@ -11,7 +11,7 @@ GEMINI_KEY = os.getenv("GEMINI_API_KEY", "")
 async def gemini_cagir(prompt: str, sistem: str = "") -> str:
     if not GEMINI_KEY:
         return "GEMINI_API_KEY bulunamadi! Secrets'a ekle."
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={GEMINI_KEY}"
     payload = {
         "system_instruction": {"parts": [{"text": sistem or "Sen yardimci bir asistansin."}]},
         "contents": [{"parts": [{"text": prompt}]}]
